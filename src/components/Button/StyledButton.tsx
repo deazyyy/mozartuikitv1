@@ -69,12 +69,12 @@ const StyledButton = styled.button<ButtonProps>`
  
 
   &:hover:not(:disabled):not(.button--disabled):not(:active) {
-    background-color: transparent;
     border-color: none;
     outline:none;
   }
 
   &:focus:not(:active) {
+    border-color: none;
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondary};
     outline:none;
   }
