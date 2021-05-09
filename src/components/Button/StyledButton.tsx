@@ -66,10 +66,11 @@ const StyledButton = styled.button<ButtonProps>`
   padding: 14px 28px;
   transition: background-color 0.2s;
   opacity: ${({ isLoading }) => (isLoading ? 0.5 : 1)};
+  border:none !important;
+  outline:none !important;
  
 
   &:hover:not(:disabled):not(.button--disabled):not(:active) {
-    border-color: none;
     outline:none;
   }
 
@@ -80,8 +81,7 @@ const StyledButton = styled.button<ButtonProps>`
   }
 
   &:active {
-    background-color: ${getButtonVariantProp("backgroundActive")};
-    box-shadow: ${getButtonVariantProp("boxShadowActive")};
+    box-shadow: none;
   }
 
   ${getDisabledStyles}
