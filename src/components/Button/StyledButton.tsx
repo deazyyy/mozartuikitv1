@@ -76,7 +76,6 @@ const StyledButton = styled.button<ButtonProps>`
 
   &:focus:not(:active) {
     border-color: none;
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondary};
     outline:none;
   }
 

@@ -77,17 +77,11 @@ return (
 } 
 return (
 <Container>
-  <div className="panelFooter">
-    <img src="images/profile.png" alt="img"/>
-    <h2>Don’t miss out on our farms !</h2>
-    <Button><Link href="/farms">Farm Now</Link></Button>
-  </div>
-  
   <SettingsEntry>
     <SocialEntry style={{display:"flex",justifyContent:"center"}}>
       {cakePriceUsd ? (
         <PriceLink href={priceLink} target="_blank">
-          <img src="images/elixircirc.png" width="30" height="30" style={{marginRight:"4px"}} alt="img"/>
+          <img src="images/mozart/mozart-head-sm.png" width="30" height="30" style={{marginRight:"4px"}} alt="img"/>
           <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
         </PriceLink>
       ) : (
@@ -95,26 +89,6 @@ return (
       )}
       
     </SocialEntry>
-    {/* <Dropdown
-      position="top-right"
-      target={
-        <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
-          <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
-        </Button>
-      }
-    >
-      {langs.map((lang) => (
-        <MenuButton
-          key={lang.code}
-          fullWidth
-          onClick={() => setLang(lang)}
-          // Safari fix
-          style={{ minHeight: "32px", height: "auto" }}
-        >
-          {lang.language}
-        </MenuButton>
-      ))}
-    </Dropdown> */}
     <Flex>
       {socials.map((social, index) => {
         const Icon = Icons[social.icon];

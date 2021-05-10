@@ -172,15 +172,12 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 14px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: 14px 28px;\n  transition: background-color 0.2s;\n  opacity: ", ";\n  border:none !important;\n  outline:none !important;\n \n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    outline:none;\n  }\n\n  &:focus:not(:active) {\n    border-color: none;\n    box-shadow: 0 0 0 2px ", ";\n    outline:none;\n  }\n\n  &:active {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 14px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: 14px 28px;\n  transition: background-color 0.2s;\n  opacity: ", ";\n  border:none !important;\n  outline:none !important;\n \n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    outline:none;\n  }\n\n  &:focus:not(:active) {\n    border-color: none;\n    box-shadow: 0 0 0 2px ", ";\n    outline:none;\n  }\n\n  &:active {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 14px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: 14px 28px;\n  transition: background-color 0.2s;\n  opacity: ", ";\n  border:none !important;\n  outline:none !important;\n \n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    outline:none;\n  }\n\n  &:focus:not(:active) {\n    border-color: none;\n    outline:none;\n  }\n\n  &:active {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 14px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: 14px 28px;\n  transition: background-color 0.2s;\n  opacity: ", ";\n  border:none !important;\n  outline:none !important;\n \n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    outline:none;\n  }\n\n  &:focus:not(:active) {\n    border-color: none;\n    outline:none;\n  }\n\n  &:active {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "max-content");
 }, function (_a) {
     var isLoading = _a.isLoading;
     return (isLoading ? 0.5 : 1);
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.secondary;
 }, getDisabledStyles, removePointerEvents, styledSystem.space);
 StyledButton.defaultProps = {
     fullWidth: false,
@@ -925,19 +922,6 @@ var scales$1 = {
     LG: "lg",
 };
 
-/**
- * Priority: Warning --> Success
- */
-var getBoxShadow$1 = function (_a) {
-    var _b = _a.isSuccess, isSuccess = _b === void 0 ? false : _b, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, theme = _a.theme;
-    if (isWarning) {
-        return theme.shadows.warning;
-    }
-    if (isSuccess) {
-        return theme.shadows.success;
-    }
-    return theme.shadows.inset;
-};
 var getHeight = function (_a) {
     var _b = _a.scale, scale = _b === void 0 ? scales$1.MD : _b;
     switch (scale) {
@@ -950,10 +934,10 @@ var getHeight = function (_a) {
             return "40px";
     }
 };
-var Input = styled__default['default'].input(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
+var Input = styled__default['default'].input(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
-}, getBoxShadow$1, function (_a) {
+}, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, getHeight, function (_a) {
@@ -965,9 +949,6 @@ var Input = styled__default['default'].input(templateObject_1$j || (templateObje
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.textDisabled;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.shadows.focus;
 });
 Input.defaultProps = {
     scale: scales$1.MD,
@@ -2191,14 +2172,9 @@ var PanelFooter = function (_a) {
                 React__default['default'].createElement(Icon$l, null))));
     }
     return (React__default['default'].createElement(Container$4, null,
-        React__default['default'].createElement("div", { className: "panelFooter" },
-            React__default['default'].createElement("img", { src: "images/profile.png", alt: "img" }),
-            React__default['default'].createElement("h2", null, "Don\u2019t miss out on our farms !"),
-            React__default['default'].createElement(Button, null,
-                React__default['default'].createElement(Link, { href: "/farms" }, "Farm Now"))),
         React__default['default'].createElement(SettingsEntry, null,
             React__default['default'].createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
-                React__default['default'].createElement("img", { src: "images/elixircirc.png", width: "30", height: "30", style: { marginRight: "4px" }, alt: "img" }),
+                React__default['default'].createElement("img", { src: "images/mozart/mozart-head-sm.png", width: "30", height: "30", style: { marginRight: "4px" }, alt: "img" }),
                 React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }))),
             React__default['default'].createElement(Flex, null,
                 socials.map(function (social, index) {
@@ -2525,6 +2501,8 @@ var Menu = function (_a) {
             React__default['default'].createElement("div", { className: "menutopdeskinner" },
                 React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 React__default['default'].createElement(Flex, { alignItems: "center" },
+                    React__default['default'].createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
+                    React__default['default'].createElement("a", { href: "#", className: "nav_link" }, "Exchange"),
                     React__default['default'].createElement("a", { href: "#", className: "nav_link" }, "Melody Stats"),
                     React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout })))),
         React__default['default'].createElement(BodyWrapper, null,
@@ -2638,7 +2616,7 @@ var baseColors = {
 var brandColors = {
     binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#000000", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#ededed", tertiary: "#EFF4F5", text: "#000000", textDisabled: "#BDC2C4", textSubtle: "#766d78", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#9A6AFF", background: "#343135", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#353547", text: "#EAE2FC", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#27262c", gradients: {
@@ -2706,9 +2684,9 @@ var light$1 = (_a$2 = {},
         color: "#FFFFFF",
     },
     _a$2[SUBTLE] = {
-        background: "#8dc971",
-        backgroundActive: "#8dc971",
-        backgroundHover: "#8dc971",
+        background: "#d92531",
+        backgroundActive: "#d92531",
+        backgroundHover: "#d92531",
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "none",

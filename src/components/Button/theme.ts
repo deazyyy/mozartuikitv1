@@ -55,9 +55,9 @@ export const light: ButtonTheme = {
     color: "#FFFFFF",
   },
   [SUBTLE]: {
-    background: "#8dc971",
-    backgroundActive: `#8dc971`, // 70% opacity
-    backgroundHover: `#8dc971`, // 85% opacity
+    background: "#d92531",
+    backgroundActive: `#d92531`, // 70% opacity
+    backgroundHover: `#d92531`, // 85% opacity
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",
