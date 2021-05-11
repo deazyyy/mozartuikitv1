@@ -2148,12 +2148,16 @@ var PriceLink = styled.a(templateObject_2$c || (templateObject_2$c = __makeTempl
 var SettingsEntry = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 8px;\n"], ["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
 var SocialEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 16px;\n"], ["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
-    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; _a.priceLink;
-    if (!isPushed) {
-        return (React.createElement(Container$4, null,
-            React.createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
-                React.createElement(Icon$l, null))));
-    }
+    _a.isPushed; _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; _a.priceLink;
+    // if (!isPushed) {
+    // return (
+    //   <Container>
+    //     <IconButton variant="text" onClick={() => pushNav(true)}>
+    //       <CogIcon />
+    //     </IconButton>
+    //   </Container>
+    // );
+    // } 
     return (React.createElement(Container$4, null,
         React.createElement(SettingsEntry, null,
             React.createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React.createElement(PriceLink, null,
