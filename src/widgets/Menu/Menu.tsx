@@ -177,7 +177,19 @@ const Menu: React.FC<NavProps> = ({
             href={homeLink?.href ?? "/"}
           />
           <Flex alignItems="center">
-            <a href="#" className="nav_link">Melody Stats</a>
+            <PanelFooter
+              isPushed={isPushed}
+              isDark={isDark}
+              toggleTheme={toggleTheme}
+              langs={langs}
+              setLang={setLang}
+              currentLang={currentLang}
+              cakePriceUsd={cakePriceUsd}
+              pushNav={setIsPushed}
+              links={links}
+              priceLink={priceLink}
+            />
+            <a href="https://exchange.mozartfinance.io" className="nav_link">Exchange</a>
             <UserBlock account={account} login={login} logout={logout} />
             {/* {profile && <Avatar profile={profile} />} */}
           </Flex>

@@ -58,15 +58,11 @@ export const links = [
       // },
       {
         label: 'GitHub',
-        href: 'https://github.com/slime-fi',
-      },
-      {
-        label: 'Treasury Reports',
-        href: 'https://slime.finance/reports/buybacks.html',
+        href: 'https://github.com/mozartfinance',
       },
       {
         label: 'Blog',
-        href: 'https://medium.com/@SlimeFinance',
+        href: 'https://mozart-finance.medium.com/',
       },
     ],
   },
@@ -77,12 +73,12 @@ export const socials = [
   {
     label: 'Telegram',
     icon: 'TelegramIcon',
-    href:'https://t.me/ElixirSwap',
+    href:'https://t.me/MozartFinance',
   },
   {
     label: 'Twitter',
     icon: 'TwitterIcon',
-    href: 'https://twitter.com/ElixirSwapFarm',
+    href: 'https://twitter.com/MozartFinance',
   },
 ]
 export const MENU_HEIGHT = 64
