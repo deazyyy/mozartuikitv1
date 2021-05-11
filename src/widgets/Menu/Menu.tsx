@@ -128,7 +128,7 @@ const Menu: React.FC<NavProps> = ({
             isDark={isDark}
             href={"https://mozartfinance.io"}
           />
-          <Flex alignItems="center">
+          <div className="menuconntouter">
             <PanelFooter
               isPushed={isPushed}
               isDark={isDark}
@@ -144,7 +144,7 @@ const Menu: React.FC<NavProps> = ({
             <a href="https://exchange.mozartfinance.io" className="nav_link">Exchange</a>
             <UserBlock account={account} login={login} logout={logout} />
             {/* {profile && <Avatar profile={profile} />} */}
-          </Flex>
+          </div>
         </div>
       </StyledNav>
       <BodyWrapper>
@@ -176,7 +176,7 @@ const Menu: React.FC<NavProps> = ({
             isDark={isDark}
             href={homeLink?.href ?? "/"}
           />
-          <Flex alignItems="center">
+          <div className="menuconntouter">
             <PanelFooter
               isPushed={isPushed}
               isDark={isDark}
@@ -192,7 +192,7 @@ const Menu: React.FC<NavProps> = ({
             <a href="https://exchange.mozartfinance.io" className="nav_link">Exchange</a>
             <UserBlock account={account} login={login} logout={logout} />
             {/* {profile && <Avatar profile={profile} />} */}
-          </Flex>
+          </div>
         </div>
       </div>
     </Wrapper>
