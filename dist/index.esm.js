@@ -2012,15 +2012,11 @@ var links = [
             // },
             {
                 label: 'GitHub',
-                href: 'https://github.com/slime-fi',
-            },
-            {
-                label: 'Treasury Reports',
-                href: 'https://slime.finance/reports/buybacks.html',
+                href: 'https://github.com/mozartfinance',
             },
             {
                 label: 'Blog',
-                href: 'https://medium.com/@SlimeFinance',
+                href: 'https://mozart-finance.medium.com/',
             },
         ],
     },
@@ -2029,12 +2025,12 @@ var socials = [
     {
         label: 'Telegram',
         icon: 'TelegramIcon',
-        href: 'https://t.me/ElixirSwap',
+        href: 'https://t.me/MozartFinance',
     },
     {
         label: 'Twitter',
         icon: 'TwitterIcon',
-        href: 'https://twitter.com/ElixirSwapFarm',
+        href: 'https://twitter.com/MozartFinance',
     },
 ];
 var MENU_HEIGHT = 64;
@@ -2499,7 +2495,8 @@ var Menu = function (_a) {
             React.createElement("div", { className: "menutopdeskinner" },
                 React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 React.createElement(Flex, { alignItems: "center" },
-                    React.createElement("a", { href: "#", className: "nav_link" }, "Melody Stats"),
+                    React.createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
+                    React.createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
                     React.createElement(UserBlock, { account: account, login: login, logout: logout }))))));
 };
 var templateObject_1$F, templateObject_2$e, templateObject_3$8, templateObject_4$3, templateObject_5$1;
