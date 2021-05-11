@@ -66,15 +66,15 @@ langs,
 setLang,
 priceLink,
 }) => {
-if (!isPushed) {
-return (
-  <Container>
-    <IconButton variant="text" onClick={() => pushNav(true)}>
-      <CogIcon />
-    </IconButton>
-  </Container>
-);
-} 
+// if (!isPushed) {
+// return (
+//   <Container>
+//     <IconButton variant="text" onClick={() => pushNav(true)}>
+//       <CogIcon />
+//     </IconButton>
+//   </Container>
+// );
+// } 
 return (
 <Container>
   <SettingsEntry>

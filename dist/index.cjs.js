@@ -2025,15 +2025,11 @@ var links = [
             // },
             {
                 label: 'GitHub',
-                href: 'https://github.com/slime-fi',
-            },
-            {
-                label: 'Treasury Reports',
-                href: 'https://slime.finance/reports/buybacks.html',
+                href: 'https://github.com/mozartfinance',
             },
             {
                 label: 'Blog',
-                href: 'https://medium.com/@SlimeFinance',
+                href: 'https://mozart-finance.medium.com/',
             },
         ],
     },
@@ -2042,12 +2038,12 @@ var socials = [
     {
         label: 'Telegram',
         icon: 'TelegramIcon',
-        href: 'https://t.me/ElixirSwap',
+        href: 'https://t.me/MozartFinance',
     },
     {
         label: 'Twitter',
         icon: 'TwitterIcon',
-        href: 'https://twitter.com/ElixirSwapFarm',
+        href: 'https://twitter.com/MozartFinance',
     },
 ];
 var MENU_HEIGHT = 64;
@@ -2165,12 +2161,16 @@ var PriceLink = styled__default['default'].a(templateObject_2$c || (templateObje
 var SettingsEntry = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 8px;\n"], ["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
 var SocialEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 16px;\n"], ["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
-    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; _a.priceLink;
-    if (!isPushed) {
-        return (React__default['default'].createElement(Container$4, null,
-            React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
-                React__default['default'].createElement(Icon$l, null))));
-    }
+    _a.isPushed; _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; _a.priceLink;
+    // if (!isPushed) {
+    // return (
+    //   <Container>
+    //     <IconButton variant="text" onClick={() => pushNav(true)}>
+    //       <CogIcon />
+    //     </IconButton>
+    //   </Container>
+    // );
+    // } 
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(SettingsEntry, null,
             React__default['default'].createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React__default['default'].createElement(PriceLink, null,
@@ -2512,7 +2512,8 @@ var Menu = function (_a) {
             React__default['default'].createElement("div", { className: "menutopdeskinner" },
                 React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 React__default['default'].createElement(Flex, { alignItems: "center" },
-                    React__default['default'].createElement("a", { href: "#", className: "nav_link" }, "Melody Stats"),
+                    React__default['default'].createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
+                    React__default['default'].createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
                     React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }))))));
 };
 var templateObject_1$F, templateObject_2$e, templateObject_3$8, templateObject_4$3, templateObject_5$1;
