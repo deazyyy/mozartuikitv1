@@ -2487,7 +2487,7 @@ var Menu = function (_a) {
         React.createElement(StyledNav, { showMenu: showMenu, className: "menutopdesk" },
             React.createElement("div", { className: "menutopdeskinner" },
                 React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: "https://mozartfinance.io" }),
-                React.createElement(Flex, { alignItems: "center" },
+                React.createElement("div", { className: "menuconntouter" },
                     React.createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
                     React.createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
                     React.createElement(UserBlock, { account: account, login: login, logout: logout })))),

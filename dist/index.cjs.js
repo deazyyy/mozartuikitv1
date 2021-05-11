@@ -2500,7 +2500,7 @@ var Menu = function (_a) {
         React__default['default'].createElement(StyledNav, { showMenu: showMenu, className: "menutopdesk" },
             React__default['default'].createElement("div", { className: "menutopdeskinner" },
                 React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: "https://mozartfinance.io" }),
-                React__default['default'].createElement(Flex, { alignItems: "center" },
+                React__default['default'].createElement("div", { className: "menuconntouter" },
                     React__default['default'].createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
                     React__default['default'].createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
                     React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout })))),
