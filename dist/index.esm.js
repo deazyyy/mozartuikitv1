@@ -2152,7 +2152,7 @@ var PriceLink = styled.a(templateObject_2$c || (templateObject_2$c = __makeTempl
 var SettingsEntry = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 8px;\n"], ["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
 var SocialEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 16px;\n"], ["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
-    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; var priceLink = _a.priceLink;
+    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; _a.priceLink;
     if (!isPushed) {
         return (React.createElement(Container$4, null,
             React.createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
@@ -2160,7 +2160,7 @@ var PanelFooter = function (_a) {
     }
     return (React.createElement(Container$4, null,
         React.createElement(SettingsEntry, null,
-            React.createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React.createElement(PriceLink, { href: priceLink, target: "_blank" },
+            React.createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React.createElement(PriceLink, null,
                 React.createElement("img", { src: "images/mozart/mozart-head-sm.png", width: "30", height: "30", style: { marginRight: "4px" }, alt: "img" }),
                 React.createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React.createElement(Skeleton, { width: 80, height: 24 }))),
             React.createElement(Flex, null,
@@ -2446,12 +2446,12 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_5$1 || (templateObject_5$
     return theme.mediaQueries.nav;
 });
 var Menu = function (_a) {
-    var _b, _c;
+    var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink; _a.profile; var children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
-    var _d = useState(!isMobile), isPushed = _d[0], setIsPushed = _d[1];
-    var _e = useState(true), showMenu = _e[0], setShowMenu = _e[1];
+    var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
+    var _d = useState(true), showMenu = _d[0], setShowMenu = _d[1];
     var refPrevOffset = useRef(window.pageYOffset);
     useEffect(function () {
         var handleScroll = function () {
@@ -2486,11 +2486,10 @@ var Menu = function (_a) {
     return (React.createElement(Wrapper$1, null,
         React.createElement(StyledNav, { showMenu: showMenu, className: "menutopdesk" },
             React.createElement("div", { className: "menutopdeskinner" },
-                React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+                React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: "https://mozartfinance.io" }),
                 React.createElement(Flex, { alignItems: "center" },
                     React.createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
-                    React.createElement("a", { href: "#", className: "nav_link" }, "Exchange"),
-                    React.createElement("a", { href: "#", className: "nav_link" }, "Melody Stats"),
+                    React.createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
                     React.createElement(UserBlock, { account: account, login: login, logout: logout })))),
         React.createElement(BodyWrapper, null,
             React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
@@ -2498,7 +2497,7 @@ var Menu = function (_a) {
             React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" })),
         React.createElement("div", { className: "menutopdesk menufooter" },
             React.createElement("div", { className: "menutopdeskinner" },
-                React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" }),
+                React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 React.createElement(Flex, { alignItems: "center" },
                     React.createElement("a", { href: "#", className: "nav_link" }, "Melody Stats"),
                     React.createElement(UserBlock, { account: account, login: login, logout: logout }))))));

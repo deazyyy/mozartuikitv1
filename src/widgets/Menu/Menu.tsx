@@ -126,7 +126,7 @@ const Menu: React.FC<NavProps> = ({
             isPushed={isPushed}
             togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
             isDark={isDark}
-            href={homeLink?.href ?? "/"}
+            href={"https://mozartfinance.io"}
           />
           <Flex alignItems="center">
             <PanelFooter
@@ -141,8 +141,7 @@ const Menu: React.FC<NavProps> = ({
               links={links}
               priceLink={priceLink}
             />
-            <a href="#" className="nav_link">Exchange</a>
-            <a href="#" className="nav_link">Melody Stats</a>
+            <a href="https://exchange.mozartfinance.io" className="nav_link">Exchange</a>
             <UserBlock account={account} login={login} logout={logout} />
             {/* {profile && <Avatar profile={profile} />} */}
           </Flex>

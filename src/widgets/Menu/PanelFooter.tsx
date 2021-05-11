@@ -80,7 +80,7 @@ return (
   <SettingsEntry>
     <SocialEntry style={{display:"flex",justifyContent:"center"}}>
       {cakePriceUsd ? (
-        <PriceLink href={priceLink} target="_blank">
+        <PriceLink>
           <img src="images/mozart/mozart-head-sm.png" width="30" height="30" style={{marginRight:"4px"}} alt="img"/>
           <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
         </PriceLink>

@@ -2165,7 +2165,7 @@ var PriceLink = styled__default['default'].a(templateObject_2$c || (templateObje
 var SettingsEntry = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 8px;\n"], ["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
 var SocialEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 16px;\n"], ["\ndisplay: flex;\nalign-items: center;\njustify-content: space-between;\nheight: ", "px;\npadding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
-    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; var priceLink = _a.priceLink;
+    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; _a.priceLink;
     if (!isPushed) {
         return (React__default['default'].createElement(Container$4, null,
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
@@ -2173,7 +2173,7 @@ var PanelFooter = function (_a) {
     }
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(SettingsEntry, null,
-            React__default['default'].createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
+            React__default['default'].createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React__default['default'].createElement(PriceLink, null,
                 React__default['default'].createElement("img", { src: "images/mozart/mozart-head-sm.png", width: "30", height: "30", style: { marginRight: "4px" }, alt: "img" }),
                 React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }))),
             React__default['default'].createElement(Flex, null,
@@ -2459,12 +2459,12 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5$1 |
     return theme.mediaQueries.nav;
 });
 var Menu = function (_a) {
-    var _b, _c;
+    var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink; _a.profile; var children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
-    var _d = React.useState(!isMobile), isPushed = _d[0], setIsPushed = _d[1];
-    var _e = React.useState(true), showMenu = _e[0], setShowMenu = _e[1];
+    var _c = React.useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
+    var _d = React.useState(true), showMenu = _d[0], setShowMenu = _d[1];
     var refPrevOffset = React.useRef(window.pageYOffset);
     React.useEffect(function () {
         var handleScroll = function () {
@@ -2499,11 +2499,10 @@ var Menu = function (_a) {
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(StyledNav, { showMenu: showMenu, className: "menutopdesk" },
             React__default['default'].createElement("div", { className: "menutopdeskinner" },
-                React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+                React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: "https://mozartfinance.io" }),
                 React__default['default'].createElement(Flex, { alignItems: "center" },
                     React__default['default'].createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
-                    React__default['default'].createElement("a", { href: "#", className: "nav_link" }, "Exchange"),
-                    React__default['default'].createElement("a", { href: "#", className: "nav_link" }, "Melody Stats"),
+                    React__default['default'].createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
                     React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout })))),
         React__default['default'].createElement(BodyWrapper, null,
             React__default['default'].createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
@@ -2511,7 +2510,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" })),
         React__default['default'].createElement("div", { className: "menutopdesk menufooter" },
             React__default['default'].createElement("div", { className: "menutopdeskinner" },
-                React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" }),
+                React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 React__default['default'].createElement(Flex, { alignItems: "center" },
                     React__default['default'].createElement("a", { href: "#", className: "nav_link" }, "Melody Stats"),
                     React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }))))));
