@@ -141,8 +141,11 @@ const Menu: React.FC<NavProps> = ({
               links={links}
               priceLink={priceLink}
             />
-            <a href="https://exchange.mozartfinance.io" className="nav_link">Exchange</a>
-            <UserBlock account={account} login={login} logout={logout} />
+            <div className="connectrowouter">
+              <a href="https://exchange.mozartfinance.io" className="nav_link">Exchange</a>
+              <UserBlock account={account} login={login} logout={logout} />
+            </div>
+            
             {/* {profile && <Avatar profile={profile} />} */}
           </div>
         </div>
