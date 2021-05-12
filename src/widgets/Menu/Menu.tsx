@@ -129,18 +129,25 @@ const Menu: React.FC<NavProps> = ({
             href={"https://mozartfinance.io"}
           />
           <div className="menuconntouter">
-            <PanelFooter
-              isPushed={isPushed}
-              isDark={isDark}
-              toggleTheme={toggleTheme}
-              langs={langs}
-              setLang={setLang}
-              currentLang={currentLang}
-              cakePriceUsd={cakePriceUsd}
-              pushNav={setIsPushed}
-              links={links}
-              priceLink={priceLink}
-            />
+            <div className="menulinkouter">
+              <div className="centeric"> 
+                <a target="_blank" aria-label="Gitbook" href="https://mozartfinance.gitbook.io/mozart-finance/"><img src="images/gitbook.png"/></a>
+                <a target="_blank" aria-label="Medium" href="https://mozart-finance.medium.com/"><i className="fab fa-medium"></i></a>
+              </div>
+              <PanelFooter
+                isPushed={isPushed}
+                isDark={isDark}
+                toggleTheme={toggleTheme}
+                langs={langs}
+                setLang={setLang}
+                currentLang={currentLang}
+                cakePriceUsd={cakePriceUsd}
+                pushNav={setIsPushed}
+                links={links}
+                priceLink={priceLink}
+              />
+            </div>
+            
             <div className="connectrowouter">
               <a href="https://exchange.mozartfinance.io" className="nav_link">Exchange</a>
               <UserBlock account={account} login={login} logout={logout} />
@@ -180,18 +187,25 @@ const Menu: React.FC<NavProps> = ({
             href={"https://mozartfinance.io"}
           />
           <div className="menuconntouter">
-            <PanelFooter
-              isPushed={isPushed}
-              isDark={isDark}
-              toggleTheme={toggleTheme}
-              langs={langs}
-              setLang={setLang}
-              currentLang={currentLang}
-              cakePriceUsd={cakePriceUsd}
-              pushNav={setIsPushed}
-              links={links}
-              priceLink={priceLink}
-            />
+            <div className="menulinkouter">
+              <div className="centeric"> 
+                <a target="_blank" aria-label="Gitbook" href="https://mozartfinance.gitbook.io/mozart-finance/"><img src="images/gitbook.png"/></a>
+                <a target="_blank" aria-label="Medium" href="https://mozart-finance.medium.com/"><i className="fab fa-medium"></i></a>
+              </div>
+              <PanelFooter
+                isPushed={isPushed}
+                isDark={isDark}
+                toggleTheme={toggleTheme}
+                langs={langs}
+                setLang={setLang}
+                currentLang={currentLang}
+                cakePriceUsd={cakePriceUsd}
+                pushNav={setIsPushed}
+                links={links}
+                priceLink={priceLink}
+              />
+            </div>
+            
             <div className="connectrowouter">
               <a href="https://exchange.mozartfinance.io" className="nav_link">Exchange</a>
               <UserBlock account={account} login={login} logout={logout} />

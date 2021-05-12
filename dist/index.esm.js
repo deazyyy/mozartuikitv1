@@ -2163,27 +2163,24 @@ var PanelFooter = function (_a) {
             React.createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React.createElement(PriceLink, null,
                 React.createElement("img", { src: "images/mozart/mozart-head-sm.png", width: "30", height: "30", style: { marginRight: "4px" }, alt: "img" }),
                 React.createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React.createElement(Skeleton, { width: 80, height: 24 }))),
-            React.createElement(Flex, null,
-                socials.map(function (social, index) {
-                    var Icon = Icons$1[social.icon];
-                    var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
-                    var mr = index < socials.length - 1 ? "8px" : 0;
-                    // if (social.items) {
-                    //   return (
-                    //     <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
-                    //       {social.items.map((item) => (
-                    //         <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
-                    //           {item.label}
-                    //         </Link>
-                    //       ))}
-                    //     </Dropdown>
-                    //   );
-                    // }
-                    return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
-                        React.createElement(Icon, __assign({}, iconProps))));
-                }),
-                React.createElement("a", { target: "_blank", "aria-label": "Discord", href: "https://discord.gg/mG7EcYa3c9" },
-                    React.createElement("i", { className: "fab fa-discord", style: { fontSize: "22px", color: "#c0c0c4", marginLeft: "8px" } }))))));
+            React.createElement(Flex, null, socials.map(function (social, index) {
+                var Icon = Icons$1[social.icon];
+                var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
+                var mr = index < socials.length - 1 ? "8px" : 0;
+                // if (social.items) {
+                //   return (
+                //     <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
+                //       {social.items.map((item) => (
+                //         <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
+                //           {item.label}
+                //         </Link>
+                //       ))}
+                //     </Dropdown>
+                //   );
+                // }
+                return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
+                    React.createElement(Icon, __assign({}, iconProps))));
+            })))));
 };
 var templateObject_1$B, templateObject_2$c, templateObject_3$7, templateObject_4$2;
 
@@ -2446,12 +2443,11 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_5$1 || (templateObject_5$
     return theme.mediaQueries.nav;
 });
 var Menu = function (_a) {
-    var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink; _a.profile; var children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
-    var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
-    var _d = useState(true), showMenu = _d[0], setShowMenu = _d[1];
+    var _b = useState(!isMobile), isPushed = _b[0], setIsPushed = _b[1];
+    var _c = useState(true), showMenu = _c[0], setShowMenu = _c[1];
     var refPrevOffset = useRef(window.pageYOffset);
     useEffect(function () {
         var handleScroll = function () {
@@ -2482,13 +2478,19 @@ var Menu = function (_a) {
         };
     }, []);
     // Find the home link if provided
-    var homeLink = links.find(function (link) { return link.label === "Home"; });
+    links.find(function (link) { return link.label === "Home"; });
     return (React.createElement(Wrapper$1, null,
         React.createElement(StyledNav, { showMenu: showMenu, className: "menutopdesk" },
             React.createElement("div", { className: "menutopdeskinner" },
                 React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: "https://mozartfinance.io" }),
                 React.createElement("div", { className: "menuconntouter" },
-                    React.createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
+                    React.createElement("div", { className: "menulinkouter" },
+                        React.createElement("div", { className: "centeric" },
+                            React.createElement("a", { target: "_blank", "aria-label": "Gitbook", href: "https://mozartfinance.gitbook.io/mozart-finance/" },
+                                React.createElement("img", { src: "images/gitbook.png" })),
+                            React.createElement("a", { target: "_blank", "aria-label": "Medium", href: "https://mozart-finance.medium.com/" },
+                                React.createElement("i", { className: "fab fa-medium" }))),
+                        React.createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink })),
                     React.createElement("div", { className: "connectrowouter" },
                         React.createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
                         React.createElement(UserBlock, { account: account, login: login, logout: logout }))))),
@@ -2498,11 +2500,18 @@ var Menu = function (_a) {
             React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" })),
         React.createElement("div", { className: "menutopdesk menufooter" },
             React.createElement("div", { className: "menutopdeskinner" },
-                React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+                React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: "https://mozartfinance.io" }),
                 React.createElement("div", { className: "menuconntouter" },
-                    React.createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
-                    React.createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
-                    React.createElement(UserBlock, { account: account, login: login, logout: logout }))))));
+                    React.createElement("div", { className: "menulinkouter" },
+                        React.createElement("div", { className: "centeric" },
+                            React.createElement("a", { target: "_blank", "aria-label": "Gitbook", href: "https://mozartfinance.gitbook.io/mozart-finance/" },
+                                React.createElement("img", { src: "images/gitbook.png" })),
+                            React.createElement("a", { target: "_blank", "aria-label": "Medium", href: "https://mozart-finance.medium.com/" },
+                                React.createElement("i", { className: "fab fa-medium" }))),
+                        React.createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink })),
+                    React.createElement("div", { className: "connectrowouter" },
+                        React.createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
+                        React.createElement(UserBlock, { account: account, login: login, logout: logout })))))));
 };
 var templateObject_1$F, templateObject_2$e, templateObject_3$8, templateObject_4$3, templateObject_5$1;
 

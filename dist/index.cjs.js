@@ -2176,27 +2176,24 @@ var PanelFooter = function (_a) {
             React__default['default'].createElement(SocialEntry, { style: { display: "flex", justifyContent: "center" } }, cakePriceUsd ? (React__default['default'].createElement(PriceLink, null,
                 React__default['default'].createElement("img", { src: "images/mozart/mozart-head-sm.png", width: "30", height: "30", style: { marginRight: "4px" }, alt: "img" }),
                 React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }))),
-            React__default['default'].createElement(Flex, null,
-                socials.map(function (social, index) {
-                    var Icon = Icons$1[social.icon];
-                    var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
-                    var mr = index < socials.length - 1 ? "8px" : 0;
-                    // if (social.items) {
-                    //   return (
-                    //     <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
-                    //       {social.items.map((item) => (
-                    //         <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
-                    //           {item.label}
-                    //         </Link>
-                    //       ))}
-                    //     </Dropdown>
-                    //   );
-                    // }
-                    return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
-                        React__default['default'].createElement(Icon, __assign({}, iconProps))));
-                }),
-                React__default['default'].createElement("a", { target: "_blank", "aria-label": "Discord", href: "https://discord.gg/mG7EcYa3c9" },
-                    React__default['default'].createElement("i", { className: "fab fa-discord", style: { fontSize: "22px", color: "#c0c0c4", marginLeft: "8px" } }))))));
+            React__default['default'].createElement(Flex, null, socials.map(function (social, index) {
+                var Icon = Icons$1[social.icon];
+                var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
+                var mr = index < socials.length - 1 ? "8px" : 0;
+                // if (social.items) {
+                //   return (
+                //     <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
+                //       {social.items.map((item) => (
+                //         <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
+                //           {item.label}
+                //         </Link>
+                //       ))}
+                //     </Dropdown>
+                //   );
+                // }
+                return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
+                    React__default['default'].createElement(Icon, __assign({}, iconProps))));
+            })))));
 };
 var templateObject_1$B, templateObject_2$c, templateObject_3$7, templateObject_4$2;
 
@@ -2459,12 +2456,11 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5$1 |
     return theme.mediaQueries.nav;
 });
 var Menu = function (_a) {
-    var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink; _a.profile; var children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
-    var _c = React.useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
-    var _d = React.useState(true), showMenu = _d[0], setShowMenu = _d[1];
+    var _b = React.useState(!isMobile), isPushed = _b[0], setIsPushed = _b[1];
+    var _c = React.useState(true), showMenu = _c[0], setShowMenu = _c[1];
     var refPrevOffset = React.useRef(window.pageYOffset);
     React.useEffect(function () {
         var handleScroll = function () {
@@ -2495,13 +2491,19 @@ var Menu = function (_a) {
         };
     }, []);
     // Find the home link if provided
-    var homeLink = links.find(function (link) { return link.label === "Home"; });
+    links.find(function (link) { return link.label === "Home"; });
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(StyledNav, { showMenu: showMenu, className: "menutopdesk" },
             React__default['default'].createElement("div", { className: "menutopdeskinner" },
                 React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: "https://mozartfinance.io" }),
                 React__default['default'].createElement("div", { className: "menuconntouter" },
-                    React__default['default'].createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
+                    React__default['default'].createElement("div", { className: "menulinkouter" },
+                        React__default['default'].createElement("div", { className: "centeric" },
+                            React__default['default'].createElement("a", { target: "_blank", "aria-label": "Gitbook", href: "https://mozartfinance.gitbook.io/mozart-finance/" },
+                                React__default['default'].createElement("img", { src: "images/gitbook.png" })),
+                            React__default['default'].createElement("a", { target: "_blank", "aria-label": "Medium", href: "https://mozart-finance.medium.com/" },
+                                React__default['default'].createElement("i", { className: "fab fa-medium" }))),
+                        React__default['default'].createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink })),
                     React__default['default'].createElement("div", { className: "connectrowouter" },
                         React__default['default'].createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
                         React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }))))),
@@ -2511,11 +2513,18 @@ var Menu = function (_a) {
             React__default['default'].createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" })),
         React__default['default'].createElement("div", { className: "menutopdesk menufooter" },
             React__default['default'].createElement("div", { className: "menutopdeskinner" },
-                React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+                React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: "https://mozartfinance.io" }),
                 React__default['default'].createElement("div", { className: "menuconntouter" },
-                    React__default['default'].createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
-                    React__default['default'].createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
-                    React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }))))));
+                    React__default['default'].createElement("div", { className: "menulinkouter" },
+                        React__default['default'].createElement("div", { className: "centeric" },
+                            React__default['default'].createElement("a", { target: "_blank", "aria-label": "Gitbook", href: "https://mozartfinance.gitbook.io/mozart-finance/" },
+                                React__default['default'].createElement("img", { src: "images/gitbook.png" })),
+                            React__default['default'].createElement("a", { target: "_blank", "aria-label": "Medium", href: "https://mozart-finance.medium.com/" },
+                                React__default['default'].createElement("i", { className: "fab fa-medium" }))),
+                        React__default['default'].createElement(PanelFooter, { isPushed: isPushed, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink })),
+                    React__default['default'].createElement("div", { className: "connectrowouter" },
+                        React__default['default'].createElement("a", { href: "https://exchange.mozartfinance.io", className: "nav_link" }, "Exchange"),
+                        React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout })))))));
 };
 var templateObject_1$F, templateObject_2$e, templateObject_3$8, templateObject_4$3, templateObject_5$1;
 
